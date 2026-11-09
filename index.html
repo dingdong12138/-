@@ -152,11 +152,6 @@
                 </div>
             </div>
 
-            <!-- 对应疗愈插画 -->
-            <div class="glass-card rounded-2xl overflow-hidden shadow-sm border border-white/50 mb-6">
-                <img id="resultImage" src="" alt="心理状态插画" class="w-full h-auto object-cover">
-            </div>
-
             <!-- 年龄对比卡片 -->
             <div class="glass-card rounded-2xl p-6 shadow-sm border border-white/50 mb-6">
                 <h3 class="font-serif text-lg font-semibold mb-4 text-center">年龄维度分析</h3>
@@ -476,25 +471,6 @@
             // 换算为0-100%依赖指数 (最低18分，最高72分)
             const percentage = Math.round(((totalScore - 18) / 54) * 100);
 
-            // ========== 根据分数匹配对应插画 ==========
-            const resultImage = document.getElementById('resultImage');
-            if (percentage >= 80) {
-                // 第一张：重度情绪依赖
-                resultImage.src = 'result-1.jpg';
-            } else if (percentage >= 60) {
-                // 第二张：中度情绪依赖
-                resultImage.src = 'result-2.jpg';
-            } else if (percentage >= 40) {
-                // 第三张：轻度情绪依赖
-                resultImage.src = 'result-3.jpg';
-            } else if (percentage >= 20) {
-                // 第四张：清醒独立型
-                resultImage.src = 'result-4.jpg';
-            } else {
-                // 第五张：极致自律型
-                resultImage.src = 'result-5.jpg';
-            }
-
             // 计算心理年龄
             let mentalAge;
             if (percentage >= 80) {
@@ -597,3 +573,4 @@
     </script>
 </body>
 </html>
+
